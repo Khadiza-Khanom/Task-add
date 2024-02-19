@@ -21,8 +21,9 @@ const save_task=()=>{
   pops.value=0
 
 }
-const remove_task=()=>{
-  taskList.value.pop()
+const remove_task=(index)=>{
+
+  taskList.value.splice(index,1)
 }
 </script>
 
@@ -39,7 +40,7 @@ const remove_task=()=>{
   <tr v-for="task,index in taskList " :key="index">
     <td>{{task.task_name}}</td>
     <td>{{task.time}}</td>
-    <td><button @click="remove_task()">Remove</button></td>
+    <td><button @click="remove_task(index)">Remove</button></td>
   </tr>
   
  
